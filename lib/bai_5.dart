@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-
+//https://viblo.asia/p/hoc-flutter-tu-co-ban-den-nang-cao-phan-5-co-nang-flutter-hoat-dong-nhu-the-nao-3Q75w1G7ZWb#_4-nang-flutter-da-lam-gi-moi-lan-rebuild-8
 void main() {
   runApp(const MyApp());
 }
