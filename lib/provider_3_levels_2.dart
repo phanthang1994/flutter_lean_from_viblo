@@ -1,24 +1,18 @@
 // Copyright 2019 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-//https://sotatek.udemy.com/course/flutter-bootcamp-with-dart/learn/lecture/15785418#overview
-//13:10
-import 'dart:io' show Platform;
-
-import 'package:flutter/foundation.dart' show kIsWeb;
+// https://sotatek.udemy.com/course/flutter-bootcamp-with-dart/learn/lecture/15785418#overview
+// 13:10
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-
 void main() {
-  runApp(
-    MyApp()
-  );
+  runApp(MyApp());
 }
 
-
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +23,7 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             title: MyText(),
           ),
-          body: Level1()
+          body: Level1(),
         ),
       ),
     );
@@ -50,9 +44,9 @@ class Level2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    return Column(
       children: [
-        MyTextFeild(),
+        MyTextField(),
         Level3(),
       ],
     );
@@ -77,23 +71,23 @@ class MyText extends StatelessWidget {
   }
 }
 
-class MyTextFeild extends StatelessWidget {
-  const MyTextFeild({Key? key}) : super(key: key);
+class MyTextField extends StatelessWidget {
+  const MyTextField({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextField(
-      onChanged: (newText){
-        Provider.of<Data>(context).changeStringh(newText);
+      onChanged: (newText) {
+        Provider.of<Data>(context, listen: false).changeString(newText);
       },
     );
   }
 }
 
-
-class Data extends ChangeNotifier{
+class Data extends ChangeNotifier {
   String data = "test1 ChangeNotifier";
-  void changeStringh(String newString){
+
+  void changeString(String newString) {
     data = newString;
     notifyListeners();
   }
