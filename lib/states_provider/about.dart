@@ -11,7 +11,9 @@ import 'model/ui.dart';
 
 
 class About extends StatelessWidget {
-  final String text = lorem(paragraphs: 3, words: 50);
+  String text = lorem(paragraphs: 3, words: 50);
+
+  About({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class About extends StatelessWidget {
         title: const Text('About'),
         backgroundColor: Colors.teal,
       ),
-      drawer: DrawerMenu(),
+      drawer: const DrawerMenu(),
       body: Container(
         margin: const EdgeInsets.all(10.0),
         child: Consumer<UI>(
