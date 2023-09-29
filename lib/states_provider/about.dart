@@ -11,7 +11,7 @@ import 'model/ui.dart';
 
 
 class About extends StatelessWidget {
-  String text = lorem(paragraphs: 3, words: 50);
+  final String text = lorem(paragraphs: 3, words: 50);
 
   @override
   Widget build(BuildContext context) {
