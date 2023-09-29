@@ -17,7 +17,7 @@ class Settings extends StatelessWidget {
         backgroundColor: Colors.teal,
         title: const Text('Settings'),
       ),
-      drawer: DrawerMenu(),
+      drawer: const DrawerMenu(),
       body: Consumer<UI>(builder: (context, ui, child) {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,

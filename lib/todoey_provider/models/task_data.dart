@@ -4,7 +4,7 @@ import 'dart:collection';
 import 'package:untitled2/todoey_provider/models/task.dart';
 
 class TaskData extends ChangeNotifier {
-  final List<Task> _tasks = [
+  late final List<Task> _tasks = [
     Task(name: 'Buy milk'),
     Task(name: 'Buy eggs'),
     Task(name: 'Buy bread'),
@@ -19,7 +19,7 @@ class TaskData extends ChangeNotifier {
   }
 
   void addTask(String newTaskTitle) {
-    final task = Task(name: newTaskTitle);
+    var task = Task(name: newTaskTitle);
     _tasks.add(task);
     notifyListeners();
   }

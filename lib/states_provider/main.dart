@@ -5,8 +5,8 @@ import 'package:untitled2/states_provider/settings.dart';
 import 'about.dart';
 import 'home.dart';
 import 'model/ui.dart';
-
-void main() => runApp(MyApp());
+//https://github.com/mahmudahsan/flutter/tree/master
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         routes: {
           '/': (context) => Home(),
           '/about': (context) => About(),
-          '/settings': (context) => Settings(),
+          '/settings': (context) => const Settings(),
         },
       ),
     );
