@@ -25,16 +25,16 @@ class Settings extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 20, top: 20),
               child: Text(
-                'Font Size: ${ui.fontSize.toInt()}',
+                'Font Size: ${ui.dealWithFontSizeByUser.toInt()}',
                 style: TextStyle(
                     fontSize: Theme.of(context).textTheme.headlineSmall?.fontSize),
               ),
             ),
             Slider(
                 min: 0.5,
-                value: ui.sliderFontSize,
+                value: ui.sliderFontSizeFromUser,
                 onChanged: (newValue) {
-                  ui.fontSize = newValue;
+                  ui.dealWithFontSizeByUser = newValue;
                 }),
           ],
         );

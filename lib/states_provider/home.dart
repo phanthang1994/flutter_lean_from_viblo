@@ -31,7 +31,7 @@ class Home extends StatelessWidget {
             return RichText(
               text: TextSpan(
                 text: text,
-                style: TextStyle(fontSize: ui.fontSize, color: Colors.black),
+                style: TextStyle(fontSize: ui.dealWithFontSizeByUser, color: Colors.black),
               ),
             );
           },

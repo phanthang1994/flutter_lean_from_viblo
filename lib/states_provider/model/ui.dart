@@ -5,14 +5,14 @@
 import 'package:flutter/material.dart';
 
 class UI with ChangeNotifier {
-  double _fontSize = 0.5;
+  double _setFontSizeByUser = 0.5;
 
-  set fontSize(newValue) {
-    _fontSize = newValue;
+  set dealWithFontSizeByUser(newValue) {
+    _setFontSizeByUser = newValue;
     notifyListeners();
   }
 
-  double get fontSize => _fontSize * 30;
+  double get dealWithFontSizeByUser => _setFontSizeByUser * 30;
 
-  double get sliderFontSize => _fontSize;
+  double get sliderFontSizeFromUser => _setFontSizeByUser;
 }

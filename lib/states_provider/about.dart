@@ -31,7 +31,7 @@ class About extends StatelessWidget {
               text: TextSpan(
                 text: text,
                 style:
-                    TextStyle(fontSize: ui.fontSize, color: Colors.lightBlue),
+                    TextStyle(fontSize: ui.dealWithFontSizeByUser, color: Colors.lightBlue),
               ),
             );
           },
