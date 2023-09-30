@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-//https://viblo.asia/p/hoc-flutter-tu-co-ban-den-nang-cao-phan-4-lot-tran-inheritedwidget-3P0lPDbmlox
-// rebuild all
+
 void main() {
   runApp(
     const MaterialApp(
@@ -68,13 +67,13 @@ class MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class DisplayCounterWidget extends StatelessWidget {
-  const DisplayCounterWidget({super.key});
+class CounterWidget extends StatelessWidget {
+  const CounterWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     if (kDebugMode) {
-      print('rebuild DisplayCounterWidget');
+      print('rebuild CounterWidget');
     }
     final myInheritedWidget = MyInheritedWidget.of(context);
 
@@ -97,7 +96,7 @@ class MyCenterWidget extends StatelessWidget {
       print('rebuild MyCenterWidget');
     }
     return const Center(
-      child: DisplayCounterWidget(),
+      child: CounterWidget(),
     );
   }
 }

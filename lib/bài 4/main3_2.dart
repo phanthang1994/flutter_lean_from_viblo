@@ -1,10 +1,8 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-//https://viblo.asia/p/hoc-flutter-tu-co-ban-den-nang-cao-phan-4-lot-tran-inheritedwidget-3P0lPDbmlox
-// rebuild all
+
 void main() {
   runApp(
-    const MaterialApp(
+    MaterialApp(
       home: MyHomePage(isLoading: false, counter: 0),
     ),
   );
@@ -14,7 +12,7 @@ class MyHomePage extends StatefulWidget {
   final bool isLoading;
   final int counter;
 
-  const MyHomePage({super.key,
+  const MyHomePage({
     required this.isLoading,
     required this.counter,
   });
@@ -38,14 +36,12 @@ class MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    if (kDebugMode) {
-      print('rebuild MyHomePage');
-    }
+    print('rebuild MyHomePage');
     return Scaffold(
       body: MyInheritedWidget(
         isLoading: _isLoading,
         counter: _counter,
-        child: const MyCenterWidget(),
+        child: MyCenterWidget(),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: onFloatingButtonClicked,
@@ -54,9 +50,7 @@ class MyHomePageState extends State<MyHomePage> {
   }
 
   void onFloatingButtonClicked() {
-    if (kDebugMode) {
-      print('Button clicked!. Call setState method');
-    }
+    print('Button clicked!. Call setState method');
     setState(() {
       _counter++;
       if (_counter % 2 == 0) {
@@ -68,36 +62,28 @@ class MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class DisplayCounterWidget extends StatelessWidget {
-  const DisplayCounterWidget({super.key});
-
+class CounterWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    if (kDebugMode) {
-      print('rebuild DisplayCounterWidget');
-    }
+    print('rebuild CounterWidget');
     final myInheritedWidget = MyInheritedWidget.of(context);
 
     if (myInheritedWidget == null) {
-      return const Text('MyInheritedWidget was not found');
+      return Text('MyInheritedWidget was not found');
     }
 
     return myInheritedWidget.isLoading
-        ? const CircularProgressIndicator()
+        ? CircularProgressIndicator()
         : Text('${myInheritedWidget.counter}');
   }
 }
 
 class MyCenterWidget extends StatelessWidget {
-  const MyCenterWidget({super.key});
-
   @override
   Widget build(BuildContext context) {
-    if (kDebugMode) {
-      print('rebuild MyCenterWidget');
-    }
-    return const Center(
-      child: DisplayCounterWidget(),
+    print('rebuild MyCenterWidget');
+    return Center(
+      child: CounterWidget(),
     );
   }
 }
@@ -107,7 +93,7 @@ class MyInheritedWidget extends InheritedWidget {
   final bool isLoading;
   final Widget child;
 
-  const MyInheritedWidget({super.key,
+  MyInheritedWidget({
     required this.isLoading,
     required this.counter,
     required this.child,

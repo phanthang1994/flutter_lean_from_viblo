@@ -1,11 +1,14 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-//https://viblo.asia/p/hoc-flutter-tu-co-ban-den-nang-cao-phan-4-lot-tran-inheritedwidget-3P0lPDbmlox
-// rebuild all
+
 void main() {
   runApp(
     const MaterialApp(
-      home: MyHomePage(isLoading: false, counter: 0),
+      home: MyHomePage(
+        isLoading: false,
+        counter: 0,
+        child: MyCenterWidget(),
+      ),
     ),
   );
 }
@@ -13,10 +16,12 @@ void main() {
 class MyHomePage extends StatefulWidget {
   final bool isLoading;
   final int counter;
+  final Widget child;
 
   const MyHomePage({super.key,
     required this.isLoading,
     required this.counter,
+    required this.child,
   });
 
   @override
@@ -45,7 +50,7 @@ class MyHomePageState extends State<MyHomePage> {
       body: MyInheritedWidget(
         isLoading: _isLoading,
         counter: _counter,
-        child: const MyCenterWidget(),
+        child: widget.child,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: onFloatingButtonClicked,
@@ -68,13 +73,13 @@ class MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class DisplayCounterWidget extends StatelessWidget {
-  const DisplayCounterWidget({super.key});
+class CounterWidget extends StatelessWidget {
+  const CounterWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     if (kDebugMode) {
-      print('rebuild DisplayCounterWidget');
+      print('rebuild CounterWidget');
     }
     final myInheritedWidget = MyInheritedWidget.of(context);
 
@@ -97,7 +102,7 @@ class MyCenterWidget extends StatelessWidget {
       print('rebuild MyCenterWidget');
     }
     return const Center(
-      child: DisplayCounterWidget(),
+      child: CounterWidget(),
     );
   }
 }
