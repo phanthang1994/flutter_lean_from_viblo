@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    const MaterialApp(
-      home: MyHomePage(isLoading: false, counter: 0),
+    MaterialApp(
+      home: MyHomePage(
+        isLoading: false,
+        counter: 0,
+        child: MyCenterWidget(),
+      ),
     ),
   );
 }
@@ -11,10 +15,12 @@ void main() {
 class MyHomePage extends StatefulWidget {
   final bool isLoading;
   final int counter;
+  final Widget child;
 
-  const MyHomePage({super.key,
+  const MyHomePage({
     required this.isLoading,
     required this.counter,
+    required this.child,
   });
 
   @override
@@ -41,7 +47,7 @@ class MyHomePageState extends State<MyHomePage> {
       body: MyInheritedWidget(
         isLoading: _isLoading,
         counter: _counter,
-        child: MyCenterWidget(),
+        child: widget.child,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: onFloatingButtonClicked,
@@ -82,8 +88,20 @@ class MyCenterWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     print('rebuild MyCenterWidget');
+    // Listen for changes to the inherited widget directly
+    final myInheritedWidget = MyInheritedWidget.of(context);
+    if (myInheritedWidget == null) {
+      return Text('MyInheritedWidget was not found');
+    }
+
     return Center(
-      child: CounterWidget(),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text('MyCenterWidget'),
+          CounterWidget(),
+        ],
+      ),
     );
   }
 }
@@ -101,7 +119,7 @@ class MyInheritedWidget extends InheritedWidget {
 
   @override
   bool updateShouldNotify(MyInheritedWidget oldWidget) {
-    return false;
+    return isLoading != oldWidget.isLoading || counter != oldWidget.counter;
   }
 
   static MyInheritedWidget? of(BuildContext context) {
