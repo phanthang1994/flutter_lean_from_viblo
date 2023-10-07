@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
+//https://codewithandrea.com/articles/flutter-state-management-riverpod/
 void main() {
   runApp(const ProviderScope(child: MyApp()));
 }

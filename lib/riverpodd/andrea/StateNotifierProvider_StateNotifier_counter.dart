@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-
+//https://codewithandrea.com/articles/flutter-state-management-riverpod/
 class CounterNotifier extends StateNotifier<int> {
   CounterNotifier() : super(0);
 

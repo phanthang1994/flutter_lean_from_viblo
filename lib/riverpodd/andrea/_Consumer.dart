@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-
+//https://codewithandrea.com/articles/flutter-state-management-riverpod/
 // Provider that returns a string value
 final helloWorldProvider = Provider<String>((ref) {
   return 'Hello world';

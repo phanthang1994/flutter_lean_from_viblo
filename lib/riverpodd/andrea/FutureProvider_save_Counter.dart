@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
+//https://codewithandrea.com/articles/flutter-state-management-riverpod/
 final counterFutureProvider = FutureProvider<int>((ref) async {
   // Load the counter from shared preferences
   final SharedPreferences prefs = await SharedPreferences.getInstance();

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
+//https://codewithandrea.com/articles/flutter-state-management-riverpod/
 // Declare a Provider for the current product index
 final currentProductIndex = Provider<int>((_) => throw UnimplementedError());
 

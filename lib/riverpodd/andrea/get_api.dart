@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart' as http;
-
+// https://docs-v2.riverpod.dev/docs/essentials/side_effects
 void main() {
   runApp(
     // To install Riverpod, we need to add this widget above everything else.

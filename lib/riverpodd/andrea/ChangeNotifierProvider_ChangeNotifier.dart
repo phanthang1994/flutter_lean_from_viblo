@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
+//https://codewithandrea.com/articles/flutter-state-management-riverpod/
 final counterProvider = ChangeNotifierProvider<Counter>((ref) => Counter());
 
 class Counter extends ChangeNotifier {

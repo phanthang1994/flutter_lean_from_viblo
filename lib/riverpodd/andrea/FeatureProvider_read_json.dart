@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'dart:convert';
-
+//https://codewithandrea.com/articles/flutter-state-management-riverpod/
 void main() {
   runApp(const ProviderScope(child: MyApp()));
 }
