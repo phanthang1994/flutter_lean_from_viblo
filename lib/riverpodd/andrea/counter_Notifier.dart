@@ -42,7 +42,7 @@ void main() {
             title: const Text('Counter App with Riverpod'),
           ),
           body: const Center(
-            child: CounterWidget(),
+            child: MyApp(),
           ),
         ),
       ),
