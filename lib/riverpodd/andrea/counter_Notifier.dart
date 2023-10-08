@@ -35,13 +35,10 @@ class CounterWidget extends ConsumerWidget {
 
 void main() {
   runApp(
-    ProviderScope(
+    const ProviderScope(
       child: MaterialApp(
         home: Scaffold(
-          appBar: AppBar(
-            title: const Text('Counter App with Riverpod'),
-          ),
-          body: const Center(
+          body: Center(
             child: MyApp(),
           ),
         ),
