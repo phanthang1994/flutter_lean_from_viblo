@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 
-import '../counter_notifier.dart';
+import '../counter_StateNotifierProvider_StateNotifier.dart';
 import '../counter_state.dart';
 //https://github.com/ThrowJojo/riverpod_counter_example
 //https://developermemos.com/posts/counter-riverpod-v1
